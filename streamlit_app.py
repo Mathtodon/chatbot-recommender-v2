@@ -58,7 +58,7 @@ if "openai_model" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-for message in st.session_state.messages:
+for message in st.session_state.messages[1:]:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
@@ -72,8 +72,8 @@ if prompt := st.chat_input("What is up?"):
         full_response = ""
         for response in openai.ChatCompletion.create(
             model=st.session_state["openai_model"],
-            messages= [{"role": "system", "content": "RuPaul_chatbot_prompt"}]+[
-                {"role": m["role"], "content": m["content"]} for m in st.session_state.messages
+            messages= [{"role": m["role"], "content": m["content"]} 
+                       for m in st.session_state.messages
             ],
             stream=True,
         ):
