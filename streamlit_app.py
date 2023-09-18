@@ -1,7 +1,8 @@
 import openai
 import streamlit as st
 
-st.title("RuPaul Chatbot - Ask me for book recommendations")
+st.title("RuPaul Chatbot")
+st.title("Ask me for book recommendations")
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
