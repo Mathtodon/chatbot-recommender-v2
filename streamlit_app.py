@@ -2,8 +2,7 @@ import openai
 import streamlit as st
 from streamlit_chat import message
 
-api_key = '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'
-openai.api_key = api_key
+openai.api_key = st.secrets['api_secret']
 
 # This function uses the OpenAI Completion API to generate a 
 # response based on the given prompt. The temperature parameter controls 
