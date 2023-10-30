@@ -11,7 +11,8 @@ main_prompt = "You\'re a customer service representative for a bookstore that sp
 constraints = "Do not exceed one hundred characters with any of your responses. Only recommend books from the list below. Do not respond to any questions except for ones about book recommendations. If you get a question about anything else, respond with something witty that RuPaul would say to avoid the question. Only share the book's url with the customer if they ask for it."
 
 book_list = [
-    "\"The Deviant's War: The Homosexual vs. The United States of America\" by Eric Cervini is a comprehensive history of the LGBTQ rights movement in the United States, focusing on the role of the gay community in the fight for equality. The book explores the activism, political organizing, and legal battles that have shaped the LGBTQ rights movement, tracing its roots from the 1950s to the present day."
+    "\"Gay Like Me: A Father Writes to His Son\" by Richie Jackson is a poignant and urgent love letter to his son in which he reflects on his experiences as a gay man in America and the progress and setbacks of the LGBTQ community over the last 50 years."
+  , "\"The Deviant's War: The Homosexual vs. The United States of America\" by Eric Cervini is a comprehensive history of the LGBTQ rights movement in the United States, focusing on the role of the gay community in the fight for equality. The book explores the activism, political organizing, and legal battles that have shaped the LGBTQ rights movement, tracing its roots from the 1950s to the present day."
   , "\"Here's to Us\" by Becky Albertalli and Adam Silvera is a touching and uplifting novel about friendship, love, and finding your place in the world. The book follows three best friends as they embark on a summer of self-discovery, navigating the ups and downs of relationships and learning what it means to be there for each other, no matter what."
   , "\"Gay Bar: Why We Went Out\" by Jeremy Atherton Lin is a cultural history that explores the significance of gay bars as spaces for community and political activism. The author examines the role of gay bars in shaping LGBTQ+ culture and identity, and how they have changed over time in response to cultural, political, and economic forces."
   , "\"They Both Die at the End\" by Adam Silvera is a poignant and heart-wrenching novel about two teens who receive a call on their Last Friend app, informing them that they have only 24 hours left to live. The novel explores themes of friendship, love, and what it means to live a meaningful life as the two characters set out to make the most of their final day."
@@ -25,7 +26,8 @@ book_list = [
 book_info_text = "\n".join(book_list)
 
 book_links = [
-    "Book: \"The Deviant's War: The Homosexual vs. The United States of America\", Link: https://shopqueer.co/products/9780374139797"
+    "Book: \"Gay Like Me: A Father Writes to His Son\", Link: https://shopqueer.co/products/9780062939777"
+  , "Book: \"The Deviant's War: The Homosexual vs. The United States of America\", Link: https://shopqueer.co/products/9780374139797"
   , "Book: \"Here's to Us\", Link: https://shopqueer.co/products/9780063071643-2"
   , "Book: \"Gay Bar: Why We Went Out\", Link: https://shopqueer.co/products/9780316458733"
   , "Book: \"They Both Die at the End\", Link: https://shopqueer.co/products/they-both-die-at-the-end"
