@@ -79,13 +79,12 @@ if prompt := st.chat_input("What can I help you with?"):
             model=st.session_state["openai_model"],
             messages= [{"role": m["role"], "content": m["content"]} 
                        for m in st.session_state.messages
-            ],
-            # stream=True,
+            ]
         ):
             #full_response += response.choices[0].delta.get("content", "")
             print(response)
             # full_response += response  
-            full_response += str(response.choices[0].message.content)
+            full_response += str(dict(response).choices[0].message.content)
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
