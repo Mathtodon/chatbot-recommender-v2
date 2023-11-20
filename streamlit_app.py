@@ -1,11 +1,12 @@
-from openai import OpenAI
+import openai
 import streamlit as st
+import json
 import pydantic
 
 st.title("RuPaul Chatbot")
 st.subheader("Ask me for book recommendation")
 
-client = OpenAI(
+client = openai.OpenAI(
   api_key=st.secrets["OPENAI_API_KEY"],
 )
 
