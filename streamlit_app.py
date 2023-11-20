@@ -86,14 +86,8 @@ if prompt := st.chat_input("What can I help you with?"):
             # full_response += list(response)[1][0]
 
             # full_response += list(response)[1]
-
-            # Serialize the object to a JSON-formatted string
-            json_string = json.dumps(response, indent=4)  # 'indent' adds pretty-printing for readability
-            
-            # Print the JSON-formatted string
-            print(json_string)
           
-            full_response += json_string.choices[0].message.content
+            full_response += response.choices[0].message.content
           
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
