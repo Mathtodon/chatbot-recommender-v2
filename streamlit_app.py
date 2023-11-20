@@ -81,7 +81,7 @@ if prompt := st.chat_input("What can I help you with?"):
             ]
         ):
 
-            full_response += str(list(response)[1][0][0])
+            full_response += str(list(response)[1])
           
             # full_response += response.choices[0].message
             message_placeholder.markdown(full_response + "▌")
