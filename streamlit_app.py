@@ -83,6 +83,9 @@ if prompt := st.chat_input("What can I help you with?"):
         ):
             #full_response += response.choices[0].delta.get("content", "")
             #full_response += response.choices[0].message.content
+            print(response.choices[0].text)
+            print(dict(response).get('usage'))
+            print(response.model_dump_json(indent=2))
             full_response += response.model_dump_json(indent=2).choices[0].message.get("content", "")
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
