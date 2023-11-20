@@ -83,12 +83,9 @@ if prompt := st.chat_input("What can I help you with?"):
             # stream=True,
         ):
             #full_response += response.choices[0].delta.get("content", "")
+            print(response)
+            full_response += response  
             #full_response += response.choices[0].message.content
-            #print(response.choices[0].text)
-            #print(dict(response).get('usage'))
-            # print(response.choices[0].text)
-            full_response += response.choices[0].message.content
-            #full_response += response.choices[0].message.get("content", "")
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
