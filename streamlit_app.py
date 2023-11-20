@@ -59,7 +59,7 @@ Again, please keep your responses to one hundred characters or less.\
 "
 
 if "openai_model" not in st.session_state:
-    st.session_state["openai_model"] = "gpt-3.5-turbo-1106" # "gpt-3.5-turbo"
+    st.session_state["openai_model"] = "gpt-3.5-turbo-1106" #"gpt-3.5-turbo"
   
 
 if "messages" not in st.session_state:
@@ -88,6 +88,8 @@ if prompt := st.chat_input("What can I help you with?"):
             # full_response += list(response)[1][0]
 
             # full_response += list(response)[1]
+
+            
           
             full_response += response.choices[0].message.content
           
