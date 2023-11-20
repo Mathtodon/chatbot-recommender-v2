@@ -82,7 +82,7 @@ if prompt := st.chat_input("What can I help you with?"):
             messages= [{"role": m["role"], "content": m["content"]} 
                        for m in st.session_state.messages
             ],
-            response_format={ "type": "json_object" }
+            # response_format={ "type": "json_object" }
         ):
 
             # full_response += list(response)[1][0]
