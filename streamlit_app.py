@@ -82,9 +82,10 @@ if prompt := st.chat_input("What can I help you with?"):
             ]
         ):
             #full_response += response.choices[0].delta.get("content", "")
-            print(response)
+            response_dict = dict(response)
             # full_response += response  
-            full_response += str(dict(response).choices[0].message.content)
+            # full_response += str(.choices[0].message.content)
+            full_response += str(response_dict)
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
