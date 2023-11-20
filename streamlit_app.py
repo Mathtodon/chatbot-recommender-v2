@@ -93,7 +93,7 @@ if prompt := st.chat_input("What can I help you with?"):
             # Print the JSON-formatted string
             print(json_string)
           
-            full_response += json_string #response.choices[0].message.content
+            full_response += json_string.choices[0].message.content
           
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
