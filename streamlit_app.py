@@ -85,7 +85,7 @@ if prompt := st.chat_input("What can I help you with?"):
             # response_format={ "type": "json_object" }
         ):
 
-            full_response += list(response)[1]
+            full_response += list(response)[0]
 
             # full_response += list(response)[
          
