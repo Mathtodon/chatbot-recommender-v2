@@ -91,7 +91,7 @@ if prompt := st.chat_input("What can I help you with?"):
 
             
           
-            full_response += response.choices[0].message.content
+            full_response += dict(response).choices[0].message.content
           
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
