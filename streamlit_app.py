@@ -1,5 +1,6 @@
 from openai import OpenAI
 import streamlit as st
+import pydantic
 
 st.title("RuPaul Chatbot")
 st.subheader("Ask me for book recommendation")
@@ -81,11 +82,12 @@ if prompt := st.chat_input("What can I help you with?"):
             ]
         ):
 
-            full_response += list(response)[1][0]
+            # full_response += list(response)[1][0]
 
             # full_response += list(response)[1]
           
-            # full_response += response.choices[0].message
+            full_response += response.model_dump().choices[0].message
+          
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
