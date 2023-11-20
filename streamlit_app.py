@@ -1,6 +1,5 @@
 from openai import OpenAI
 import streamlit as st
-import json
 
 st.title("RuPaul Chatbot")
 st.subheader("Ask me for book recommendation")
@@ -83,7 +82,7 @@ if prompt := st.chat_input("What can I help you with?"):
         ):
             #full_response += response.choices[0].delta.get("content", "")
             # response_dict = response
-            full_response += str(response[0])
+            full_response += str(list(response))
             # full_response += response.choices[0].message
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
