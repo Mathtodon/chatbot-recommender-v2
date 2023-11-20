@@ -1,10 +1,12 @@
-import openai
+import openai import OpenAI
 import streamlit as st
 
 st.title("RuPaul Chatbot")
 st.subheader("Ask me for book recommendation")
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+client = OpenAI(
+  api_key=st.secrets["OPENAI_API_KEY"],
+)
 
 main_prompt = "You\'re a customer service representative for a bookstore that specializes in queer books called ShopQueer.co. You'll get questions from a customer asking for a book recommendation and wish to provide a concise response. Read the following question and reply in the tone of RuPaul, the famous drag queen. Make the response biting yet funny and only include one book recommendation at a time. Make sure to take into consideration the type of book the customer is asking for and the book information below."
 
@@ -72,14 +74,15 @@ if prompt := st.chat_input("What can I help you with?"):
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         full_response = ""
-        for response in openai.ChatCompletion.create(
+        for response in client.chat.completions.create(
             model=st.session_state["openai_model"],
             messages= [{"role": m["role"], "content": m["content"]} 
                        for m in st.session_state.messages
             ],
             stream=True,
         ):
-            full_response += response.choices[0].delta.get("content", "")
+            #full_response += response.choices[0].delta.get("content", "")
+            full_response += response.choices[0].message.content
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
