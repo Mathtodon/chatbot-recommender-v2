@@ -59,7 +59,8 @@ Again, please keep your responses to one hundred characters or less.\
 "
 
 if "openai_model" not in st.session_state:
-    st.session_state["openai_model"] = "gpt-3.5-turbo"
+    st.session_state["openai_model"] = "gpt-3.5-turbo-1106" # "gpt-3.5-turbo"
+  
 
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "system", "content": RuPaul_chatbot_prompt}]
@@ -80,7 +81,8 @@ if prompt := st.chat_input("What can I help you with?"):
             model=st.session_state["openai_model"],
             messages= [{"role": m["role"], "content": m["content"]} 
                        for m in st.session_state.messages
-            ]
+            ],
+            response_format={ "type": "json_object" }
         ):
 
             # full_response += list(response)[1][0]
