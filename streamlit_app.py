@@ -1,5 +1,6 @@
 from openai import OpenAI
 import streamlit as st
+import json
 
 st.title("RuPaul Chatbot")
 st.subheader("Ask me for book recommendation")
