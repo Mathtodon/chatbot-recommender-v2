@@ -85,11 +85,11 @@ if prompt := st.chat_input("What can I help you with?"):
             # response_format={ "type": "json_object" }
         ):
 
-            full_response += list(response)[0]
+            # full_response += list(response)[0]
 
             # full_response += list(response)[
          
-            # full_response += response.choices[0].message.content
+            full_response += response.choices[0].message.content
           
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
